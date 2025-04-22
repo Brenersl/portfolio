@@ -72,13 +72,8 @@ if (contactForm) {
     const email = document.getElementById("email").value
     const message = document.getElementById("message").value
 
-    // Here you would typically send the form data to a server
     console.log("Form submitted:", { name, email, message })
-
-    // Show success message
     alert("Mensagem enviada com sucesso!")
-
-    // Reset form
     this.reset()
   })
 }
@@ -88,80 +83,66 @@ document.getElementById("current-year").textContent = new Date().getFullYear()
 
 /*===== CAROUSEL =====*/
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize all carousels
-  const carousels = document.querySelectorAll('.carousel__container');
-  
+  const carousels = document.querySelectorAll('.carousel__container')
+
   carousels.forEach(carousel => {
-    const id = carousel.id;
-    const slides = carousel.querySelectorAll('.carousel__slide');
-    const dots = document.querySelectorAll(`.carousel__dot[data-carousel="${id}"]`);
-    const prevBtn = document.querySelector(`.carousel__btn--prev[data-carousel="${id}"]`);
-    const nextBtn = document.querySelector(`.carousel__btn--next[data-carousel="${id}"]`);
+    const id = carousel.id
+    const slides = carousel.querySelectorAll('.carousel__slide')
+    const dots = document.querySelectorAll(`.carousel__dot[data-carousel="${id}"]`)
+    const prevBtn = document.querySelector(`.carousel__btn--prev[data-carousel="${id}"]`)
+    const nextBtn = document.querySelector(`.carousel__btn--next[data-carousel="${id}"]`)
     
-    let currentSlide = 0;
-    
-    // Function to show a specific slide
+    let currentSlide = 0
+
     function showSlide(index) {
-      // Hide all slides
-      slides.forEach(slide => {
-        slide.classList.remove('active');  
-      // Hide all slides
-      slides.forEach(slide => {
-        slide.classList.remove('active');
-      });
-      
-      // Show the selected slide
-      slides[index].classList.add('active');
-      
-      // Update dots
+      slides.forEach(slide => slide.classList.remove('active'))
+      slides[index].classList.add('active')
+
       dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-      
-      currentSlide = index;
-    
-    // Event listeners for dots
+        dot.classList.toggle('active', i === index)
+      })
+
+      currentSlide = index
+    }
+
     dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        showSlide(i);
-      });
-    });
-    
-    // Event listeners for prev/next buttons
+      dot.addEventListener('click', () => showSlide(i))
+    })
+
     if (prevBtn) {
       prevBtn.addEventListener('click', () => {
-        let index = currentSlide - 1;
-        if (index < 0) index = slides.length - 1;
-        showSlide(index);
-      });
+        let index = currentSlide - 1
+        if (index < 0) index = slides.length - 1
+        showSlide(index)
+      })
     }
-    
+
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
-        let index = currentSlide + 1;
-        if (index >= slides.length) index = 0;
-        showSlide(index);
-      });
+        let index = currentSlide + 1
+        if (index >= slides.length) index = 0
+        showSlide(index)
+      })
     }
-    
-    // Auto-rotate carousel (optional)
+
     let interval = setInterval(() => {
-      let index = currentSlide + 1;
-      if (index >= slides.length) index = 0;
-      showSlide(index);
-    }, 5000);
-    
-    // Pause auto-rotation on hover
+      let index = currentSlide + 1
+      if (index >= slides.length) index = 0
+      showSlide(index)
+    }, 5000)
+
     carousel.addEventListener('mouseenter', () => {
-      clearInterval(interval);
-    });
-    
+      clearInterval(interval)
+    })
+
     carousel.addEventListener('mouseleave', () => {
       interval = setInterval(() => {
-        let index = currentSlide + 1;
-        if (index >= slides.length) index = 0;
-        showSlide(index);
-      }, 5000);
-    });
-  });\
-});
+        let index = currentSlide + 1
+        if (index >= slides.length) index = 0
+        showSlide(index)
+      }, 5000)
+    })
+
+    showSlide(0) // inicia mostrando o primeiro slide
+  })
+})
