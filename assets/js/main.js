@@ -51,10 +51,10 @@ sr.reveal(".about__text", { delay: 400 })
 sr.reveal(".skills__subtitle", {})
 sr.reveal(".skills__text", { delay: 200 })
 sr.reveal(".skills__data", { interval: 200 })
-sr.reveal(".skills__img", { delay: 400 })
+sr.reveal(".skills__list", { delay: 400 })
 
-/*SCROLL WORK*/
-sr.reveal(".work__item", { interval: 200 })
+/*SCROLL PROJECTS*/
+sr.reveal(".project__item", { interval: 200 })
 
 /*SCROLL CONTACT*/
 sr.reveal(".contact__subtitle", {})
@@ -85,3 +85,83 @@ if (contactForm) {
 
 /*===== CURRENT YEAR =====*/
 document.getElementById("current-year").textContent = new Date().getFullYear()
+
+/*===== CAROUSEL =====*/
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize all carousels
+  const carousels = document.querySelectorAll('.carousel__container');
+  
+  carousels.forEach(carousel => {
+    const id = carousel.id;
+    const slides = carousel.querySelectorAll('.carousel__slide');
+    const dots = document.querySelectorAll(`.carousel__dot[data-carousel="${id}"]`);
+    const prevBtn = document.querySelector(`.carousel__btn--prev[data-carousel="${id}"]`);
+    const nextBtn = document.querySelector(`.carousel__btn--next[data-carousel="${id}"]`);
+    
+    let currentSlide = 0;
+    
+    // Function to show a specific slide
+    function showSlide(index) {
+      // Hide all slides
+      slides.forEach(slide => {
+        slide.classList.remove('active');  
+      // Hide all slides
+      slides.forEach(slide => {
+        slide.classList.remove('active');
+      });
+      
+      // Show the selected slide
+      slides[index].classList.add('active');
+      
+      // Update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+      
+      currentSlide = index;
+    
+    // Event listeners for dots
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        showSlide(i);
+      });
+    });
+    
+    // Event listeners for prev/next buttons
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        let index = currentSlide - 1;
+        if (index < 0) index = slides.length - 1;
+        showSlide(index);
+      });
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        let index = currentSlide + 1;
+        if (index >= slides.length) index = 0;
+        showSlide(index);
+      });
+    }
+    
+    // Auto-rotate carousel (optional)
+    let interval = setInterval(() => {
+      let index = currentSlide + 1;
+      if (index >= slides.length) index = 0;
+      showSlide(index);
+    }, 5000);
+    
+    // Pause auto-rotation on hover
+    carousel.addEventListener('mouseenter', () => {
+      clearInterval(interval);
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+      interval = setInterval(() => {
+        let index = currentSlide + 1;
+        if (index >= slides.length) index = 0;
+        showSlide(index);
+      }, 5000);
+    });
+  });\
+});
