@@ -62,55 +62,54 @@ sr.reveal(".contact__text", { delay: 200 })
 sr.reveal(".contact__info-item", { interval: 200 })
 sr.reveal(".contact__form", { delay: 400 })
 
-/*===== FORM SUBMISSION =====*/
-const contactForm = document.getElementById("contact-form")
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault()
-
-    const name = document.getElementById("name").value
-    const email = document.getElementById("email").value
-    const message = document.getElementById("message").value
-
-    console.log("Form submitted:", { name, email, message })
-    alert("Mensagem enviada com sucesso!")
-    this.reset()
-  })
-}
-
 /*===== CURRENT YEAR =====*/
 document.getElementById("current-year").textContent = new Date().getFullYear()
 
 /*===== CAROUSEL =====*/
 document.addEventListener("DOMContentLoaded", () => {
-  const carousels = document.querySelectorAll('.carousel__container')
+  // Initialize all carousels
+  const carousels = document.querySelectorAll(".carousel__container")
 
-  carousels.forEach(carousel => {
+  carousels.forEach((carousel) => {
     const id = carousel.id
-    const slides = carousel.querySelectorAll('.carousel__slide')
+    const slides = carousel.querySelectorAll(".carousel__slide")
     const dots = document.querySelectorAll(`.carousel__dot[data-carousel="${id}"]`)
     const prevBtn = document.querySelector(`.carousel__btn--prev[data-carousel="${id}"]`)
     const nextBtn = document.querySelector(`.carousel__btn--next[data-carousel="${id}"]`)
-    
+
     let currentSlide = 0
 
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'))
-      slides[index].classList.add('active')
+    // Set first slide as active initially
+    slides[0].classList.add("active")
 
+    // Function to show a specific slide
+    function showSlide(index) {
+      // Hide all slides
+      slides.forEach((slide) => {
+        slide.classList.remove("active")
+      })
+
+      // Show the selected slide
+      slides[index].classList.add("active")
+
+      // Update dots
       dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index)
+        dot.classList.toggle("active", i === index)
       })
 
       currentSlide = index
     }
 
+    // Event listeners for dots
     dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => showSlide(i))
+      dot.addEventListener("click", () => {
+        showSlide(i)
+      })
     })
 
+    // Event listeners for prev/next buttons
     if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
+      prevBtn.addEventListener("click", () => {
         let index = currentSlide - 1
         if (index < 0) index = slides.length - 1
         showSlide(index)
@@ -118,31 +117,71 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
+      nextBtn.addEventListener("click", () => {
         let index = currentSlide + 1
         if (index >= slides.length) index = 0
         showSlide(index)
       })
     }
 
+    // Auto-rotate carousel
     let interval = setInterval(() => {
       let index = currentSlide + 1
       if (index >= slides.length) index = 0
       showSlide(index)
     }, 5000)
 
-    carousel.addEventListener('mouseenter', () => {
+    // Pause auto-rotation on hover
+    carousel.addEventListener("mouseenter", () => {
       clearInterval(interval)
     })
 
-    carousel.addEventListener('mouseleave', () => {
+    carousel.addEventListener("mouseleave", () => {
       interval = setInterval(() => {
         let index = currentSlide + 1
         if (index >= slides.length) index = 0
         showSlide(index)
       }, 5000)
     })
-
-    showSlide(0) // inicia mostrando o primeiro slide
   })
+
+  // Form submission to Google Sheets
+  const form = document.getElementById("contact-form")
+  const formStatus = document.getElementById("form-status")
+
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault()
+
+      formStatus.textContent = "Enviando mensagem..."
+      formStatus.className = "form-status"
+
+      // Google Sheets script URL
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwDHDAH_yvzXJIFEHjzZ41QFs6Z_BaTtWR7Q_i3-TTHNG_LLwgqYrDQkIwy-_3M_Gg/exec"
+
+      // Create FormData object
+      const formData = new FormData(form)
+
+      // Add timestamp
+      formData.append("timestamp", new Date().toLocaleString())
+
+      // Send data to Google Sheets
+      fetch(scriptURL, { method: "POST", body: formData })
+        .then((response) => {
+          if (response.ok) {
+            formStatus.textContent = "Mensagem enviada com sucesso!"
+            formStatus.className = "form-status success"
+            form.reset()
+          } else {
+            throw new Error("Erro ao enviar mensagem")
+          }
+        })
+        .catch((error) => {
+          formStatus.textContent = "Erro ao enviar mensagem. Tente novamente."
+          formStatus.className = "form-status error"
+          console.error("Error:", error)
+        })
+    })
+  }
 })

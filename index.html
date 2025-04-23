@@ -68,7 +68,7 @@
 
             <div class="about__container bd-grid">
                 <div class="about__img">
-                    <img src="assets/img/sobremim.png" alt="Brener Silva Lima">
+                    <img src="assets/img/sobremim.jpg.jpg" alt="Brener Silva Lima">
                 </div>
                 
                 <div>
@@ -103,7 +103,6 @@
                             <i class='bx bxl-html5 skills__icon'></i>
                             <span class="skills__name">HTML5</span>
                         </div>
-                        <!-- <div class="skills__bar skills__html"></div> -->
                     </div>
                     
                     <div class="skills__data">
@@ -111,7 +110,6 @@
                             <i class='bx bxl-css3 skills__icon'></i>
                             <span class="skills__name">CSS3</span>
                         </div>
-                        <!--  <div class="skills__bar skills__css"></div>  -->
                     </div>
                     
                     <div class="skills__data">
@@ -119,7 +117,6 @@
                             <i class='bx bxl-javascript skills__icon'></i>
                             <span class="skills__name">JAVASCRIPT</span>
                         </div>
-                        <!--  <div class="skills__bar skills__js"></div>  -->
                     </div>
                     
                     <div class="skills__data">
@@ -127,15 +124,13 @@
                             <i class='bx bxl-react skills__icon'></i>
                             <span class="skills__name">REACT</span>
                         </div>
-                        <!--  <div class="skills__bar skills__react"></div>  -->
                     </div>
                     
                     <div class="skills__data">
                         <div class="skills__names">
-                            <i class='bx bxl-typescript skills__icon'></i>
+                            <i class='bx bxs-file-js skills__icon'></i>
                             <span class="skills__name">TYPESCRIPT</span>
                         </div>
-                        <!--  <div class="skills__bar skills__typescript"></div>   -->
                     </div>
                     
                     <div class="skills__data">
@@ -143,7 +138,6 @@
                             <i class='bx bxs-paint skills__icon'></i>
                             <span class="skills__name">UX/UI DESIGN</span>
                         </div>
-                        <!--  <div class="skills__bar skills__ux"></div>   -->
                     </div>
                     
                     <div class="skills__data">
@@ -151,7 +145,6 @@
                             <i class='bx bxl-figma skills__icon'></i>
                             <span class="skills__name">FIGMA</span>
                         </div>
-                        <!--  <div class="skills__bar skills__figma"></div>   -->
                     </div>
                 </div>
                 
@@ -189,7 +182,7 @@
                     
                     <div class="project__carousel">
                         <div class="carousel__container" id="carousel1">
-                            <div class="carousel__slide active">
+                            <div class="carousel__slide">
                                 <img src="assets/img/01.jpg" alt="M&C Books - Imagem 1" class="carousel__img">
                             </div>
                             <div class="carousel__slide">
@@ -220,7 +213,7 @@
                     
                     <div class="project__carousel">
                         <div class="carousel__container" id="carousel2">
-                            <div class="carousel__slide active">
+                            <div class="carousel__slide">
                                 <img src="assets/img/03.jpg" alt="Spotify - Imagem 1" class="carousel__img">
                             </div>
                             <div class="carousel__slide">
@@ -251,7 +244,7 @@
                     
                     <div class="project__carousel">
                         <div class="carousel__container" id="carousel3">
-                            <div class="carousel__slide active">
+                            <div class="carousel__slide">
                                 <img src="assets/img/05.png" alt="MindZen - Imagem 1" class="carousel__img">
                             </div>
                             <div class="carousel__slide">
@@ -294,15 +287,16 @@
                     </div>
                 </div>
 
-                <form action="" class="contact__form" id="contact-form">
+                <form id="contact-form" class="contact__form">
                     <div class="contact__inputs">
-                        <input type="text" placeholder="Nome" class="contact__input" id="name" required>
-                        <input type="email" placeholder="Email" class="contact__input" id="email" required>
+                        <input type="text" placeholder="Nome" class="contact__input" id="name" name="name" required>
+                        <input type="email" placeholder="Email" class="contact__input" id="email" name="email" required>
                     </div>
-                    <textarea placeholder="Mensagem" class="contact__input" id="message" required></textarea>
+                    <textarea placeholder="Mensagem" class="contact__input" id="message" name="message" required></textarea>
                     <button type="submit" class="button contact__button">
                         Enviar mensagem <i class='bx bx-send'></i>
                     </button>
+                    <p id="form-status" class="form-status"></p>
                 </form>
             </div>
         </section>
