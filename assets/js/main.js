@@ -26,6 +26,26 @@ function linkAction() {
 
 navLinks.forEach((n) => n.addEventListener("click", linkAction))
 
+/*===== SCROLL SECTIONS ACTIVE LINK =====*/
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive() {
+  const scrollY = window.pageYOffset
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight
+    const sectionTop = current.offsetTop - 50
+    const sectionId = current.getAttribute('id')
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document.querySelector('.nav__link[href*=' + sectionId + ']').classList.add('active-link')
+    } else {
+      document.querySelector('.nav__link[href*=' + sectionId + ']').classList.remove('active-link')
+    }
+  })
+}
+window.addEventListener('scroll', scrollActive)
+
 /*===== SCROLL REVEAL ANIMATION =====*/
 const ScrollReveal = window.ScrollReveal
 const sr = ScrollReveal({
@@ -46,6 +66,13 @@ sr.reveal(".home__social-icon", { interval: 200 })
 sr.reveal(".about__img", {})
 sr.reveal(".about__subtitle", { delay: 200 })
 sr.reveal(".about__text", { delay: 400 })
+
+/*SCROLL FREELANCER*/
+sr.reveal(".freelancer__item", {})
+sr.reveal(".freelancer__title", { delay: 200 })
+sr.reveal(".freelancer__company", { delay: 300 })
+sr.reveal(".freelancer__list-item", { interval: 100 })
+sr.reveal(".freelancer__skills", { delay: 600 })
 
 /*SCROLL SKILLS*/
 sr.reveal(".skills__subtitle", {})
