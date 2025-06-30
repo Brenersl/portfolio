@@ -26,7 +26,7 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
                     <li class="nav__item"><a href="#about" class="nav__link">Sobre</a></li>
-                    <li class="nav__item"><a href="#freelancer" class="nav__link">Freelancer</a></li>
+                    <li class="nav__item"><a href="#experiences" class="nav__link">Experiências</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link">Habilidades</a></li>
                     <li class="nav__item"><a href="#projects" class="nav__link">Projetos</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
@@ -87,56 +87,168 @@
             </div>
         </section>
 
-        <!-- PROJETOS FREELANCER -->
-        <section class="freelancer section" id="freelancer">
-            <h2 class="section-title">Projetos Freelancer</h2>
+        <!-- EXPERIÊNCIAS PROFISSIONAIS -->
+        <section class="experiences section" id="experiences">
+            <h2 class="section-title">Experiências Profissionais</h2>
 
-            <div class="freelancer__container bd-grid">
-                <div class="freelancer__content">
-                    <div class="freelancer__item">
-                        <div class="freelancer__header">
-                            <h3 class="freelancer__title">
-                                <i class='bx bx-briefcase freelancer__icon'></i>
+            <div class="experiences__container bd-grid">
+                <div class="experiences__content">
+                    
+                    <!-- TRABALHO FREELANCER -->
+                    <div class="experience__item">
+                        <div class="experience__header">
+                            <h3 class="experience__title">
+                                <i class='bx bx-briefcase experience__icon'></i>
                                 UX/UI Designer Freelancer
                             </h3>
-                            <div class="freelancer__company">
-                                <span class="freelancer__company-name">Colina Tech</span>
-                                <span class="freelancer__period">
+                            <div class="experience__company">
+                                <span class="experience__company-name">
+                                    <i class='bx bx-buildings'></i>
+                                    Colina Tech
+                                </span>
+                                <span class="experience__period">
                                     <i class='bx bx-calendar'></i>
                                     abr/2025 - mai/2025
                                 </span>
                             </div>
                         </div>
                         
-                        <div class="freelancer__description">
-                            <ul class="freelancer__list">
-                                <li class="freelancer__list-item">
+                        <div class="experience__description">
+                            <ul class="experience__list">
+                                <li class="experience__list-item">
                                     <i class='bx bx-check-circle'></i>
-                                    Desenvolvimento de soluções em UX Design para plataforma web.
+                                    <span>Desenvolvimento de soluções em UX Design para plataforma web.</span>
                                 </li>
-                                <li class="freelancer__list-item">
+                                <li class="experience__list-item">
                                     <i class='bx bx-check-circle'></i>
-                                    Criação de fluxos, wireframes e protótipos navegáveis no Figma.
+                                    <span>Criação de fluxos, wireframes e protótipos navegáveis no Figma.</span>
                                 </li>
-                                <li class="freelancer__list-item">
+                                <li class="experience__list-item">
                                     <i class='bx bx-check-circle'></i>
-                                    Alinhamento com stakeholders e colaboração com desenvolvedores.
+                                    <span>Alinhamento com stakeholders e colaboração com desenvolvedores.</span>
                                 </li>
-                                <li class="freelancer__list-item">
+                                <li class="experience__list-item">
                                     <i class='bx bx-check-circle'></i>
-                                    Foco na experiência do usuário e usabilidade.
+                                    <span>Foco na experiência do usuário e usabilidade.</span>
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="freelancer__skills">
-                            <span class="freelancer__skill">UX Design</span>
-                            <span class="freelancer__skill">UI Design</span>
-                            <span class="freelancer__skill">Figma</span>
-                            <span class="freelancer__skill">Wireframes</span>
-                            <span class="freelancer__skill">Protótipos</span>
+                        <!-- DEMONSTRAÇÃO COM GIFs -->
+                        <div class="experience__demo">
+                            <h4 class="experience__demo-title">
+                                <i class='bx bx-play-circle'></i>
+                                Demonstração do Projeto
+                            </h4>
+                            
+                            <div class="experience__carousel">
+                                <div class="carousel__container" id="freelancer-carousel">
+                                    <div class="carousel__slide">
+                                        <img src="assets/img/colinatech1.webp" alt="Colina Tech - Demonstração 1" class="carousel__img">
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <img src="assets/img/colinatech2.webp" alt="Colina Tech - Demonstração 2" class="carousel__img">
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <img src="assets/img/colinatech3.webp" alt="Colina Tech - Demonstração 3" class="carousel__img">
+                                    </div>
+                                </div>
+                                <div class="carousel__nav">
+                                    <span class="carousel__dot active" data-slide="0" data-carousel="freelancer-carousel"></span>
+                                    <span class="carousel__dot" data-slide="1" data-carousel="freelancer-carousel"></span>
+                                    <span class="carousel__dot" data-slide="2" data-carousel="freelancer-carousel"></span>
+                                </div>
+                                <button class="carousel__btn carousel__btn--prev" data-carousel="freelancer-carousel">
+                                    <i class='bx bx-chevron-left'></i>
+                                </button>
+                                <button class="carousel__btn carousel__btn--next" data-carousel="freelancer-carousel">
+                                    <i class='bx bx-chevron-right'></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="experience__skills">
+                            <span class="experience__skill">UX Design</span>
+                            <span class="experience__skill">UI Design</span>
+                            <span class="experience__skill">Figma</span>
+                            <span class="experience__skill">Wireframes</span>
+                            <span class="experience__skill">Protótipos</span>
                         </div>
                     </div>
+
+                    <!-- TRABALHO VOLUNTÁRIO -->
+                    <div class="experience__item volunteer">
+                        <div class="experience__header">
+                            <h3 class="experience__title">
+                                <i class='bx bx-heart experience__icon'></i>
+                                UX/UI Designer Voluntário
+                            </h3>
+                            <div class="experience__company">
+                                <span class="experience__company-name">
+                                    <i class='bx bx-group'></i>
+                                    ONG - Projeto Criança Feliz
+                                </span>
+                                <span class="experience__period">
+                                    <i class='bx bx-calendar'></i>
+                                    jun/2025 - atual
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="experience__description">
+                            <ul class="experience__list">
+                                <li class="experience__list-item">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Desenvolvimento de layout completo para o site institucional da ONG.</span>
+                                </li>
+                                <li class="experience__list-item">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Aplicação de conhecimentos do Google UX Design Certificate.</span>
+                                </li>
+                                <li class="experience__list-item">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Criação de protótipos navegáveis e wireframes no Figma.</span>
+                                </li>
+                                <li class="experience__list-item">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Foco em acessibilidade e experiência do usuário para causas sociais.</span>
+                                </li>
+                                <li class="experience__list-item">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Colaboração com equipe multidisciplinar da organização.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- DEMONSTRAÇÃO DO PROJETO VOLUNTÁRIO -->
+                        <div class="experience__demo">
+                            <h4 class="experience__demo-title">
+                                <i class='bx bxl-figma'></i>
+                                Protótipo em Desenvolvimento
+                            </h4>
+                            <div class="experience__demo-content">
+                                <div class="volunteer__preview">
+                                    <img src="assets/img/projetocriançafeliz.png" alt="Preview do site da ONG" class="volunteer__preview-img">
+                                    <p class="experience__demo-caption">Layout em desenvolvimento para a ONG Projeto Criança Feliz</p>
+                                </div>
+                                <!-- Quando tiver o protótipo pronto, descomente esta linha -->
+                                <!-- <a href="SEU_LINK_DO_FIGMA" target="_blank" class="experience__demo-link">
+                                    <i class='bx bx-link-external'></i>
+                                    Ver Protótipo no Figma
+                                </a> -->
+                            </div>
+                        </div>
+
+                        <div class="experience__skills">
+                            <span class="experience__skill volunteer-skill">UX Design</span>
+                            <span class="experience__skill volunteer-skill">UI Design</span>
+                            <span class="experience__skill volunteer-skill">Figma</span>
+                            <span class="experience__skill volunteer-skill">Google UX Certificate</span>
+                            <span class="experience__skill volunteer-skill">Design Social</span>
+                            <span class="experience__skill volunteer-skill">Acessibilidade</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -326,33 +438,31 @@
             <h2 class="section-title">Entre em Contato</h2>
 
             <div class="contact__container bd-grid">
-                <div class="contact__info">
+                <div class="contact__content">
                     <h3 class="contact__subtitle">Vamos conversar</h3>
                     <p class="contact__text">
                         Estou disponível para projetos freelance, oportunidades de trabalho ou apenas para trocar ideias sobre
                         design e desenvolvimento.
                     </p>
                     
-                    <div class="contact__info-item">
-                        <i class='bx bx-mail-send contact__icon'></i>
-                        <div>
-                            <h4 class="contact__info-title">Email</h4>
-                            <span class="contact__info-data">brener.silva1009@gmail.com</span>
+                    <div class="contact__info">
+                        <div class="contact__info-item">
+                            <i class='bx bx-mail-send contact__icon'></i>
+                            <div class="contact__info-content">
+                                <h4 class="contact__info-title">Email</h4>
+                                <a href="mailto:brener.silva1009@gmail.com" class="contact__info-data">brener.silva1009@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact__info-item">
+                            <i class='bx bxl-linkedin contact__icon'></i>
+                            <div class="contact__info-content">
+                                <h4 class="contact__info-title">LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/brener-silva-2a9572165/" target="_blank" class="contact__info-data">Brener Silva Lima</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <form id="contact-form" class="contact__form">
-                    <div class="contact__inputs">
-                        <input type="text" placeholder="Nome" class="contact__input" id="name" name="name" required>
-                        <input type="email" placeholder="Email" class="contact__input" id="email" name="email" required>
-                    </div>
-                    <textarea placeholder="Mensagem" class="contact__input" id="message" name="message" required></textarea>
-                    <button type="submit" class="button contact__button">
-                        Enviar mensagem <i class='bx bx-send'></i>
-                    </button>
-                    <p id="form-status" class="form-status"></p>
-                </form>
             </div>
         </section>
     </main>

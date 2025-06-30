@@ -27,24 +27,24 @@ function linkAction() {
 navLinks.forEach((n) => n.addEventListener("click", linkAction))
 
 /*===== SCROLL SECTIONS ACTIVE LINK =====*/
-const sections = document.querySelectorAll('section[id]')
+const sections = document.querySelectorAll("section[id]")
 
 function scrollActive() {
   const scrollY = window.pageYOffset
 
-  sections.forEach(current => {
+  sections.forEach((current) => {
     const sectionHeight = current.offsetHeight
     const sectionTop = current.offsetTop - 50
-    const sectionId = current.getAttribute('id')
+    const sectionId = current.getAttribute("id")
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document.querySelector('.nav__link[href*=' + sectionId + ']').classList.add('active-link')
+      document.querySelector(".nav__link[href*=" + sectionId + "]").classList.add("active-link")
     } else {
-      document.querySelector('.nav__link[href*=' + sectionId + ']').classList.remove('active-link')
+      document.querySelector(".nav__link[href*=" + sectionId + "]").classList.remove("active-link")
     }
   })
 }
-window.addEventListener('scroll', scrollActive)
+window.addEventListener("scroll", scrollActive)
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const ScrollReveal = window.ScrollReveal
@@ -67,12 +67,13 @@ sr.reveal(".about__img", {})
 sr.reveal(".about__subtitle", { delay: 200 })
 sr.reveal(".about__text", { delay: 400 })
 
-/*SCROLL FREELANCER*/
-sr.reveal(".freelancer__item", {})
-sr.reveal(".freelancer__title", { delay: 200 })
-sr.reveal(".freelancer__company", { delay: 300 })
-sr.reveal(".freelancer__list-item", { interval: 100 })
-sr.reveal(".freelancer__skills", { delay: 600 })
+/*SCROLL EXPERIENCES*/
+sr.reveal(".experience__item", { interval: 300 })
+sr.reveal(".experience__title", { delay: 200 })
+sr.reveal(".experience__company", { delay: 300 })
+sr.reveal(".experience__list-item", { interval: 100 })
+sr.reveal(".experience__skills", { delay: 600 })
+sr.reveal(".experience__demo", { delay: 800 })
 
 /*SCROLL SKILLS*/
 sr.reveal(".skills__subtitle", {})
@@ -87,7 +88,6 @@ sr.reveal(".project__item", { interval: 200 })
 sr.reveal(".contact__subtitle", {})
 sr.reveal(".contact__text", { delay: 200 })
 sr.reveal(".contact__info-item", { interval: 200 })
-sr.reveal(".contact__form", { delay: 400 })
 
 /*===== CURRENT YEAR =====*/
 document.getElementById("current-year").textContent = new Date().getFullYear()
@@ -151,25 +151,25 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    // Auto-rotate carousel
-    let interval = setInterval(() => {
-      let index = currentSlide + 1
-      if (index >= slides.length) index = 0
-      showSlide(index)
-    }, 5000)
+    // Auto-rotate carousel - REMOVIDO
+    // let interval = setInterval(() => {
+    //   let index = currentSlide + 1
+    //   if (index >= slides.length) index = 0
+    //   showSlide(index)
+    // }, 5000)
 
-    // Pause auto-rotation on hover
-    carousel.addEventListener("mouseenter", () => {
-      clearInterval(interval)
-    })
+    // Pause auto-rotation on hover - REMOVIDO
+    // carousel.addEventListener("mouseenter", () => {
+    //   clearInterval(interval)
+    // })
 
-    carousel.addEventListener("mouseleave", () => {
-      interval = setInterval(() => {
-        let index = currentSlide + 1
-        if (index >= slides.length) index = 0
-        showSlide(index)
-      }, 5000)
-    })
+    // carousel.addEventListener("mouseleave", () => {
+    //   interval = setInterval(() => {
+    //     let index = currentSlide + 1
+    //     if (index >= slides.length) index = 0
+    //     showSlide(index)
+    //   }, 5000)
+    // })
   })
 
   // Form submission to Google Sheets
