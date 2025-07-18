@@ -538,6 +538,290 @@ img {
   transform: translateY(-2px);
 }
 
+/* ===== PROJECT MODAL STYLES ===== */
+.experience__details-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.experience__details-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal__content {
+  background-color: var(--container-color);
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-bottom: 1px solid rgba(14, 36, 49, 0.1);
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.modal__title {
+  font-size: var(--h2-font-size);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal__close {
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.modal__close:hover {
+  opacity: 1;
+}
+
+.modal__body {
+  padding: 2rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Design Phases */
+.design-phase {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--primary-color);
+  background-color: rgba(64, 112, 244, 0.05);
+  transition: all 0.3s ease;
+}
+
+.design-phase:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(64, 112, 244, 0.1);
+}
+
+.design-phase.results {
+  border-left-color: #28a745;
+  background-color: rgba(40, 167, 69, 0.05);
+}
+
+.phase__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.phase__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.phase__icon.empathy {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.phase__icon.define {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.phase__icon.ideate {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+}
+
+.phase__icon.prototype {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.phase__icon.test {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.phase__icon.results {
+  background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.phase__title {
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+  margin: 0;
+}
+
+.phase__description {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.phase__list {
+  list-style: none;
+  padding: 0;
+}
+
+.phase__list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.phase__list i {
+  color: #28a745;
+  font-size: 1rem;
+}
+
+/* Results Grid */
+.results__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.result__item {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--container-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.result__item:hover {
+  transform: translateY(-3px);
+}
+
+.result__item i {
+  font-size: 2rem;
+  color: #28a745;
+  margin-bottom: 0.5rem;
+}
+
+.result__item h4 {
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+  font-size: var(--normal-font-size);
+}
+
+.result__item p {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+}
+
+/* Modal Footer */
+.modal__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(14, 36, 49, 0.1);
+  background-color: #f8f9fa;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.modal__btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: var(--font-semi);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal__btn.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.modal__btn.secondary:hover {
+  background-color: #5a6268;
+}
+
+.modal__btn.primary {
+  background-color: #28a745;
+  color: white;
+}
+
+.modal__btn.primary:hover {
+  background-color: #218838;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ===== CAROUSEL FOR EXPERIENCES ===== */
 .experience__carousel {
   position: relative;
@@ -1071,6 +1355,30 @@ img {
     grid-template-columns: repeat(1, 1fr);
     align-items: center;
   }
+
+  .contact__info {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .modal__content {
+    width: 85%;
+  }
+
+  .modal__header {
+    padding: 2rem;
+  }
+
+  .modal__body {
+    padding: 2rem;
+  }
+
+  .phase__header {
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -1125,5 +1433,44 @@ img {
   .contact__info-item {
     min-width: auto;
     width: 100%;
+  }
+
+  .modal__content {
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .modal__header {
+    padding: 1.5rem;
+  }
+
+  .modal__body {
+    padding: 1.5rem;
+  }
+
+  .modal__footer {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .results__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .phase__header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .modal__title {
+    font-size: var(--h3-font-size);
+  }
+
+  .phase__icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
 }

@@ -92,6 +92,19 @@ sr.reveal(".contact__info-item", { interval: 200 })
 /*===== CURRENT YEAR =====*/
 document.getElementById("current-year").textContent = new Date().getFullYear()
 
+/*===== PROJECT MODAL =====*/
+function openProjectModal() {
+  const modal = document.getElementById("project-modal")
+  modal.classList.add("show")
+  document.body.style.overflow = "hidden" // Prevent background scrolling
+}
+
+function closeProjectModal() {
+  const modal = document.getElementById("project-modal")
+  modal.classList.remove("show")
+  document.body.style.overflow = "auto" // Restore scrolling
+}
+
 /*===== CAROUSEL =====*/
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize all carousels
@@ -150,65 +163,23 @@ document.addEventListener("DOMContentLoaded", () => {
         showSlide(index)
       })
     }
-
-    // Auto-rotate carousel - REMOVIDO
-    // let interval = setInterval(() => {
-    //   let index = currentSlide + 1
-    //   if (index >= slides.length) index = 0
-    //   showSlide(index)
-    // }, 5000)
-
-    // Pause auto-rotation on hover - REMOVIDO
-    // carousel.addEventListener("mouseenter", () => {
-    //   clearInterval(interval)
-    // })
-
-    // carousel.addEventListener("mouseleave", () => {
-    //   interval = setInterval(() => {
-    //     let index = currentSlide + 1
-    //     if (index >= slides.length) index = 0
-    //     showSlide(index)
-    //   }, 5000)
-    // })
   })
 
-  // Form submission to Google Sheets
-  const form = document.getElementById("contact-form")
-  const formStatus = document.getElementById("form-status")
+  // Close modal when clicking outside
+  const modal = document.getElementById("project-modal")
 
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault()
-
-      formStatus.textContent = "Enviando mensagem..."
-      formStatus.className = "form-status"
-
-      // Google Sheets script URL
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbwDHDAH_yvzXJIFEHjzZ41QFs6Z_BaTtWR7Q_i3-TTHNG_LLwgqYrDQkIwy-_3M_Gg/exec"
-
-      // Create FormData object
-      const formData = new FormData(form)
-
-      // Add timestamp
-      formData.append("timestamp", new Date().toLocaleString())
-
-      // Send data to Google Sheets
-      fetch(scriptURL, { method: "POST", body: formData })
-        .then((response) => {
-          if (response.ok) {
-            formStatus.textContent = "Mensagem enviada com sucesso!"
-            formStatus.className = "form-status success"
-            form.reset()
-          } else {
-            throw new Error("Erro ao enviar mensagem")
-          }
-        })
-        .catch((error) => {
-          formStatus.textContent = "Erro ao enviar mensagem. Tente novamente."
-          formStatus.className = "form-status error"
-          console.error("Error:", error)
-        })
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeProjectModal()
+      }
     })
   }
+
+  // Close modal with ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeProjectModal()
+    }
+  })
 })

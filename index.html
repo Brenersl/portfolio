@@ -190,7 +190,7 @@
                                 </span>
                                 <span class="experience__period">
                                     <i class='bx bx-calendar'></i>
-                                    jun/2025 - atual
+                                    junho/2025 - julho/2025
                                 </span>
                             </div>
                         </div>
@@ -224,18 +224,54 @@
                         <div class="experience__demo">
                             <h4 class="experience__demo-title">
                                 <i class='bx bxl-figma'></i>
-                                Protótipo em Desenvolvimento
+                                Protótipo Finalizado
                             </h4>
-                            <div class="experience__demo-content">
-                                <div class="volunteer__preview">
-                                    <img src="assets/img/projetocriançafeliz.png" alt="Preview do site da ONG" class="volunteer__preview-img">
-                                    <p class="experience__demo-caption">Layout em desenvolvimento para a ONG Projeto Criança Feliz</p>
+                            
+                            <div class="experience__carousel">
+                                <div class="carousel__container" id="ong-carousel">
+                                    <div class="carousel__slide">
+                                        <img src="assets/img/Imagemprojeto01.png" alt="ONG - Página Inicial" class="carousel__img">
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <img src="assets/img/Imagemprojeto02.png" alt="ONG - Seção Projetos" class="carousel__img">
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <img src="assets/img/Imagemprojeto03.png" alt="ONG - Página de Doações" class="carousel__img">
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <img src="assets/img/Imagemprojeto04.png" alt="ONG - Página de Contato" class="carousel__img">
+                                    </div>
                                 </div>
-                                <!-- Quando tiver o protótipo pronto, descomente esta linha -->
-                                <!-- <a href="SEU_LINK_DO_FIGMA" target="_blank" class="experience__demo-link">
-                                    <i class='bx bx-link-external'></i>
-                                    Ver Protótipo no Figma
-                                </a> -->
+                                <div class="carousel__nav">
+                                    <span class="carousel__dot active" data-slide="0" data-carousel="ong-carousel"></span>
+                                    <span class="carousel__dot" data-slide="1" data-carousel="ong-carousel"></span>
+                                    <span class="carousel__dot" data-slide="2" data-carousel="ong-carousel"></span>
+                                    <span class="carousel__dot" data-slide="3" data-carousel="ong-carousel"></span>
+                                </div>
+                                <button class="carousel__btn carousel__btn--prev" data-carousel="ong-carousel">
+                                    <i class='bx bx-chevron-left'></i>
+                                </button>
+                                <button class="carousel__btn carousel__btn--next" data-carousel="ong-carousel">
+                                    <i class='bx bx-chevron-right'></i>
+                                </button>
+                            </div>
+
+                            <div class="experience__demo-content" style="margin-top: 1rem;">
+                                <p class="experience__demo-caption">Site institucional completo para a ONG Projeto Criança Feliz</p>
+                                
+                                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+                                    <!-- Link para o Figma -->
+                                    <a href="https://www.figma.com/proto/7NJpaij4QNvuo85kLOrkEi/ONG---Projeto-Crian%C3%A7a-Feliz?node-id=1-178&p=f&t=oNoD8MVBDxZXdEnS-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A178" target="_blank" class="experience__demo-link">
+                                        <i class='bx bx-link-external'></i>
+                                        Ver Protótipo no Figma
+                                    </a>
+                                    
+                                    <!-- BOTÃO PARA VER DETALHES -->
+                                    <button class="experience__details-btn" onclick="openProjectModal()">
+                                        <i class='bx bx-detail'></i>
+                                        Ver Processo de Design Thinking
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -466,6 +502,199 @@
             </div>
         </section>
     </main>
+
+    <!-- MODAL PARA DETALHES DO PROJETO -->
+    <div id="project-modal" class="modal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 class="modal__title">
+                    <i class='bx bx-heart'></i>
+                    Processo de Design Thinking - ONG Projeto Criança Feliz
+                </h2>
+                <span class="modal__close" onclick="closeProjectModal()">&times;</span>
+            </div>
+            
+            <div class="modal__body">
+                <!-- FASE 1: EMPATIA -->
+                <div class="design-phase">
+                    <div class="phase__header">
+                        <div class="phase__icon empathy">
+                            <i class='bx bx-heart'></i>
+                        </div>
+                        <h3 class="phase__title">🧠 1. Empatia</h3>
+                    </div>
+                    <div class="phase__content">
+                        <p class="phase__description">
+                            <strong>Objetivo:</strong> Entender o contexto social da ONG e as necessidades reais dos usuários.
+                        </p>
+                        <h4 style="color: var(--title-color); margin: 1rem 0 0.5rem 0;">O que foi feito:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-check'></i> Entrevistas com os responsáveis pela ONG (Matheus, Railda)</li>
+                            <li><i class='bx bx-check'></i> Análise dos perfis dos usuários: doadores, voluntários e famílias assistidas</li>
+                            <li><i class='bx bx-check'></i> Observação dos canais atuais de comunicação (Instagram, WhatsApp, eventos)</li>
+                        </ul>
+                        <h4 style="color: var(--title-color); margin: 1rem 0 0.5rem 0;">Principais dores identificadas:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-x-circle' style="color: #e74c3c;"></i> Dificuldade para receber doações de forma clara e acessível</li>
+                            <li><i class='bx bx-x-circle' style="color: #e74c3c;"></i> Falta de organização visual das ações da ONG</li>
+                            <li><i class='bx bx-x-circle' style="color: #e74c3c;"></i> Pouca visibilidade das formas de ajudar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FASE 2: DEFINIÇÃO -->
+                <div class="design-phase">
+                    <div class="phase__header">
+                        <div class="phase__icon define">
+                            <i class='bx bx-target-lock'></i>
+                        </div>
+                        <h3 class="phase__title">🎯 2. Definição</h3>
+                    </div>
+                    <div class="phase__content">
+                        <h4 style="color: var(--title-color); margin: 0 0 0.5rem 0;">Problema central (Ponto de vista):</h4>
+                        <p class="phase__description" style="background-color: rgba(64, 112, 244, 0.1); padding: 1rem; border-radius: 0.5rem; font-style: italic;">
+                            "Pessoas que querem ajudar a ONG Projeto Criança Feliz precisam de um canal claro, atrativo e confiável para entender como contribuir e conhecer as ações realizadas."
+                        </p>
+                        <h4 style="color: var(--title-color); margin: 1rem 0 0.5rem 0;">Objetivos do site:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-check'></i> Facilitar doações</li>
+                            <li><i class='bx bx-check'></i> Mostrar transparência com os projetos sociais</li>
+                            <li><i class='bx bx-check'></i> Atrair voluntários e parceiros</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FASE 3: IDEAÇÃO -->
+                <div class="design-phase">
+                    <div class="phase__header">
+                        <div class="phase__icon ideate">
+                            <i class='bx bx-bulb'></i>
+                        </div>
+                        <h3 class="phase__title">💡 3. Ideação</h3>
+                    </div>
+                    <div class="phase__content">
+                        <h4 style="color: var(--title-color); margin: 0 0 0.5rem 0;">Soluções pensadas:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-check'></i> Cards com projetos em ação (imagens, datas e resumos)</li>
+                            <li><i class='bx bx-check'></i> Botões de chamada para doações, voluntariado e parcerias</li>
+                            <li><i class='bx bx-check'></i> Página de contato com QR Code para doação via Pix</li>
+                            <li><i class='bx bx-check'></i> Seção explicando o impacto de cada valor doado (ex: R$30 = alimenta 1 criança por uma semana)</li>
+                        </ul>
+                        <h4 style="color: var(--title-color); margin: 1rem 0 0.5rem 0;">Ferramentas utilizadas:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-check'></i> Brainstorm com mapa de ideias no FigJam</li>
+                            <li><i class='bx bx-check'></i> Inspiração em sites de ONGs como Gerando Falcões e TETO</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FASE 4: PROTOTIPAÇÃO -->
+                <div class="design-phase">
+                    <div class="phase__header">
+                        <div class="phase__icon prototype">
+                            <i class='bx bx-cube'></i>
+                        </div>
+                        <h3 class="phase__title">✍️ 4. Prototipação</h3>
+                    </div>
+                    <div class="phase__content">
+                        <p class="phase__description">
+                            <strong>Ferramenta utilizada:</strong> Figma
+                        </p>
+                        <h4 style="color: var(--title-color); margin: 1rem 0 0.5rem 0;">Entregas:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-check'></i> Wireframes de baixa fidelidade para organizar o conteúdo</li>
+                            <li><i class='bx bx-check'></i> Protótipo de alta fidelidade com identidade visual da ONG</li>
+                            <li><i class='bx bx-check'></i> Design responsivo com estrutura clara e moderna</li>
+                        </ul>
+                        <h4 style="color: var(--title-color); margin: 1rem 0 0.5rem 0;">Elementos visuais:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-palette' style="color: #ff6b35;"></i> Paleta de cores com laranja predominante (emocional, positivo, energético)</li>
+                            <li><i class='bx bx-font' style="color: #4070f4;"></i> Tipografia acessível e contraste adequado</li>
+                            <li><i class='bx bx-image' style="color: #28a745;"></i> Ícones, ilustrações e imagens reais das ações da ONG</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FASE 5: TESTES -->
+                <div class="design-phase">
+                    <div class="phase__header">
+                        <div class="phase__icon test">
+                            <i class='bx bx-test-tube'></i>
+                        </div>
+                        <h3 class="phase__title">🧪 5. Testes</h3>
+                    </div>
+                    <div class="phase__content">
+                        <h4 style="color: var(--title-color); margin: 0 0 0.5rem 0;">O que foi testado:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-check'></i> Compreensão dos usuários ao navegar</li>
+                            <li><i class='bx bx-check'></i> Facilidade de encontrar as formas de ajudar</li>
+                            <li><i class='bx bx-check'></i> Atratividade dos botões e clareza nas informações</li>
+                        </ul>
+                        <h4 style="color: var(--title-color); margin: 1rem 0 0.5rem 0;">Como foi feito:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-check'></i> Apresentei o protótipo para usuários reais (ex: possíveis doadores, amigos)</li>
+                            <li><i class='bx bx-check'></i> Feedbacks anotados via formulário e entrevistas curtas</li>
+                        </ul>
+                        <h4 style="color: var(--title-color); margin: 1rem 0 0.5rem 0;">Principais melhorias após testes:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-up-arrow-alt' style="color: #28a745;"></i> Aumento do tamanho do botão "Confira"</li>
+                            <li><i class='bx bx-up-arrow-alt' style="color: #28a745;"></i> Revisão da hierarquia visual nas seções</li>
+                            <li><i class='bx bx-up-arrow-alt' style="color: #28a745;"></i> Inclusão de ícones nos botões para reforçar a ação</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- RESULTADOS E IMPACTO -->
+                <div class="design-phase results">
+                    <div class="phase__header">
+                        <div class="phase__icon results">
+                            <i class='bx bx-trophy'></i>
+                        </div>
+                        <h3 class="phase__title">📊 6. Resultados e Impacto</h3>
+                    </div>
+                    <div class="phase__content">
+                        <h4 style="color: var(--title-color); margin: 0 0 0.5rem 0;">Resultados esperados:</h4>
+                        <ul class="phase__list">
+                            <li><i class='bx bx-trending-up'></i> Aumento na taxa de doações via Pix</li>
+                            <li><i class='bx bx-trending-up'></i> Maior engajamento com o conteúdo (compartilhamento e contato via formulário)</li>
+                            <li><i class='bx bx-trending-up'></i> Crescimento do número de voluntários e parcerias locais</li>
+                        </ul>
+                        
+                        <div class="results__grid" style="margin-top: 1.5rem;">
+                            <div class="result__item">
+                                <i class='bx bx-heart'></i>
+                                <h4>Facilitação do trabalho da ONG</h4>
+                                <p>Otimização dos processos de captação de recursos</p>
+                            </div>
+                            <div class="result__item">
+                                <i class='bx bx-group'></i>
+                                <h4>Aproximação Comunidade</h4>
+                                <p>Conexão entre sociedade e ações sociais</p>
+                            </div>
+                            <div class="result__item">
+                                <i class='bx bx-shield-check'></i>
+                                <h4>Transparência</h4>
+                                <p>Aumento da confiança e apoio da população</p>
+                            </div>
+                            <div class="result__item">
+                                <i class='bx bx-target-lock'></i>
+                                <h4>Impacto Social</h4>
+                                <p>Maximização do alcance das ações da ONG</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal__footer">
+                <button class="modal__btn secondary" onclick="closeProjectModal()">Fechar</button>
+                <a href="https://www.figma.com/proto/7NJpaij4QNvuo85kLOrkEi/ONG---Projeto-Crian%C3%A7a-Feliz?node-id=1-178&p=f&t=oNoD8MVBDxZXdEnS-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A178" class="modal__btn primary" target="_blank">
+                    <i class='bx bxl-figma'></i>
+                    Ver Protótipo no Figma
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
